@@ -7,6 +7,7 @@ let create = require('./../controller/create')
 let update = require('./../controller/update')
 let remove  = require('./../controller/delete')
 let find  = require('./../controller/find')
+let edit = require('./../controller/edit')
 
 
 //rota
@@ -18,8 +19,11 @@ router.get('/', (req, res) => {
 router.get('/new', (req, res) => {
     res.render('client_new')
 }) 
-
 router.post('/new', create.createCliente)
+router.post('/', create.createCliente)
+
+//rota para usar o methodOverride para fazer o put por meio do node
+router.get('/edit/:id', edit.editCliente)
 
 //:id significa que estou passando o id como parâmetro, conforme é requisitado no controlador
 router.put('/:id', update.updateCliente)

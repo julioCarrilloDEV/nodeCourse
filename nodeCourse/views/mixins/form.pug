@@ -1,0 +1,47 @@
+mixin form(client)
+    div.form-group.mt-3
+        input.form-control(
+            type="text",
+            name="cliente",
+            id="cliente",
+            placeholder="Digite o nome do cliente"
+            required, 
+            value=client.cliente
+        )
+    div.form-group
+        input.form-control(
+            type="text",
+            name="CPF",
+            id="CPF",
+            placeholder="Digite o cpf",
+            required, 
+            value=client.CPF 
+        )
+    div.form-group
+        input.form-control(
+            type="text",
+            name="telefone",
+            id="telefone",
+            placeholder="Digite o telefone",
+            required,
+            value=client.telefone
+        )
+    div.form-group
+        input.form-control(
+            type="email",
+            name="email",
+            id="email",
+            placeholder="Digite o email",
+            required,
+            value=client.email
+        )
+    div.form-group
+        input.form-control(
+            type="text",
+            name="contato",
+            id="contato",
+            placeholder="Digite o contato",
+            required,
+            value= client.contato
+        )
+    button.btn.btn-success.col-md-12(type="submit") Cadastrar

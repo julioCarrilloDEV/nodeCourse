@@ -8,10 +8,15 @@ let Fornecedor = require(path.join(__dirname, './../model/fornec'))(sequelize, S
 
 module.exports = {
     findCliente: (req, res) => {
+        let msg= 0;
         Cliente
             .findAll()
             .then((clients) => {
-                console.log(clients)
+                return res.render('client_list', {
+                    title: "Lista de Clientes",
+                    clients: clients, //variável clients com todos os registros contidos no objeto clients. 
+                    msg: req.query.msg
+                })
             })
             .catch((err) => {
                 console.log(err)

@@ -1,6 +1,16 @@
 extends ./main 
 block content 
     div.container
+        h2 #{title}
+        if msg === 1
+            div.alert.alert-success Cliente Cadastrado com sucesso!
+        if msg === 2
+            div.alert.alert-danger Não foi possível cadastrar o cliente!
+        if msg === 3
+            div.alert.alert-success Cliente Alterado com sucesso! 
+        if msg === 4
+            div.alert.alert-danger Não foi possível alterar o cliente!
+            
         table.table.table-bordered.form-align-top
             thead 
                 tr 
@@ -11,30 +21,18 @@ block content
                     th Contato 
                     th Ações 
             tbody 
-                tr 
-                    td Client1 
-                    td 912093801293802
-                    td (14)991206801
-                    td julio@gmail.com
-                    td Contato mãe 
-                    td 
-                        button.btn.btn-success(type="button") Editar
-                        button.btn.btn-danger(type="button") Deletar
-                tr 
-                    td Client2 
-                    td 912093801293802
-                    td (14)991206801
-                    td julio@gmail.com
-                    td Contato mãe 
-                    td 
-                        button.btn.btn-success(type="button") Editar
-                        button.btn.btn-danger(type="button") Deletar
-                tr 
-                    td Client3 
-                    td 912093801293802
-                    td (14)991206801
-                    td julio@gmail.com
-                    td Contato mãe 
-                    td 
-                        button.btn.btn-success(type="button") Editar
-                        button.btn.btn-danger(type="button") Deletar
+                each client in clients
+                    tr 
+                        td= client.cliente
+                        td= client.CPF
+                        td= client.telefone 
+                        td= client.email 
+                        td= client.contato 
+                        td
+                            a(href="/client/edit/" + client.id, class="btn btn-info") Editar
+                            form(
+                                method="POST",
+                                action="/client",
+                                style="display: inline-block")
+                                input(type="hidden", name="_method", value="DELETE")
+                                button.btn.btn-danger(type="submit") Deletar

@@ -10,11 +10,8 @@ module.exports = {
     createCliente: (req, res) => {
         Cliente
           .create(req.body)
-          .then(() => console.log('Inserção de Cliente OK'))
-          .catch(error => {
-            console.error('Erro ao inserir cliente:', error);
-            res.status(500).json({ error: 'Erro interno do servidor.' });
-          });
+          .then(() => res.redirect('/client/?msg=1'))
+          .catch((err) => res.redirect('/client/?msg=2'))
       },
 
       createFornecedor: (req, res) => {

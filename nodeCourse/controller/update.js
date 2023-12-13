@@ -14,7 +14,8 @@ module.exports = {
                     id: req.params.id
                 }
             })
-            .then(() => console.log("Update de Cliente OK"))
+            .then(() => res.redirect('/client/?msg=3'))
+            .catch((err) => res.redirect('/client/?msg=4'))
     },
     updateFornecedor: (req, res) => {
         Fornecedor 

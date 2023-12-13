@@ -4,6 +4,7 @@ const express = require('express');
 //Carrega para a variável os recursos do express
 const app = express ()
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override')
 //chamo o arquivo para dentro do meu programa principal.
 const home = require('./routes/home');
 const client = require('./routes/client');
@@ -28,6 +29,7 @@ require('./model/index')
 app.use('/', home);
 app.use('/client', client);
 app.use('/fornec', fornec);
+app.use(methodOverride('_method'))
 
 
 //Rota o servidor na porta especificada
