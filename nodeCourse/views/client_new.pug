@@ -1,0 +1,46 @@
+extends ./main
+
+block content 
+    div.container.form-align-top.col-md-8
+            form(action="#", method="post")
+                div.form-group.mt-3
+                    input.form-control(
+                        type="text",
+                        name="cliente",
+                        id="cliente",
+                        placeholder="Digite o nome do cliente"
+                        required
+                    )
+                div.form-group
+                    input.form-control(
+                        type="text",
+                        name="cpf",
+                        id="cpf",
+                        placeholder="Digite o cpf",
+                        required
+                    )
+                div.form-group
+                    input.form-control(
+                        type="text",
+                        name="telefone",
+                        id="telefone",
+                        placeholder="Digite o telefone",
+                        required
+                    )
+                div.form-group
+                    input.form-control(
+                        type="email",
+                        name="email",
+                        id="email",
+                        placeholder="Digite o email",
+                        required
+                    )
+                div.form-group
+                    input.form-control(
+                        type="text",
+                        name="contato",
+                        id="contato",
+                        placeholder="Digite o contato",
+                        required
+                    )
+                    button.btn.btn-success.col-md-12(type="submit") Cadastrar
