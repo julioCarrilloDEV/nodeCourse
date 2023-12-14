@@ -10,7 +10,7 @@ block content
             div.alert.alert-success Cliente Alterado com sucesso! 
         if msg === 4
             div.alert.alert-danger Não foi possível alterar o cliente!
-            
+
         table.table.table-bordered.form-align-top
             thead 
                 tr 
@@ -31,7 +31,7 @@ block content
                         td
                             a(href="/client/edit/" + client.id, class="btn btn-info") Editar
                             form(
-                                method="POST",
+                                methot="POST",
                                 action="/client",
                                 style="display: inline-block")
                                 input(type="hidden", name="_method", value="DELETE")

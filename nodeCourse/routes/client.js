@@ -26,7 +26,7 @@ router.post('/', create.createCliente)
 router.get('/edit/:id', edit.editCliente)
 
 //:id significa que estou passando o id como parâmetro, conforme é requisitado no controlador
-router.put('/:id', update.updateCliente)
+router.post('/:id', update.updateCliente)
 
 router.delete('/:id', remove.deleteCliente)
 

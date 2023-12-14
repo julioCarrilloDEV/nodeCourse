@@ -2,6 +2,12 @@ extends ./main
 include ./mixins/form
 block content 
     div.container.form-align-top.col-md-8
-            h2 Edição de Cliente
-            form(action="/client/"+ client.id + "?_method=PUT", method="post")
+        h2 Edição de Cliente
+        form(action="/client/" + client.id, method="POST")
+                // Adicione o campo hidden para indicar que é uma requisição PUT
+                input(type="hidden", name="_method", value="PUT")
                 +form(client)
+
+        
+        //- form(action="/client/" + client.id + "?_method=PUT", method="POST")
+        //-     +form(client)

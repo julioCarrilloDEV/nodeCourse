@@ -15,6 +15,7 @@ module.exports = {
             })
             .catch((err) => {
                 console.log(err)
+                console.log('PAROU AQUI')
             })
     }
 }
