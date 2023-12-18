@@ -5,7 +5,7 @@ let router = express.Router()
 let create = require('./../controller/create')
 //Chamo o update e atribuo à variável update
 let update = require('./../controller/update')
-let remove  = require('./../controller/delete')
+let remove  = require('./../controller/remove')
 let find  = require('./../controller/find')
 let edit = require('./../controller/edit')
 
@@ -28,10 +28,7 @@ router.get('/edit/:id', edit.editCliente)
 //:id significa que estou passando o id como parâmetro, conforme é requisitado no controlador
 router.post('/:id', update.updateCliente)
 
-router.delete('/:id', remove.deleteCliente)
-
-
-
+router.delete('/delete/:id', remove.removeCliente)
 
 //exporta o módulo
 module.exports = router;
